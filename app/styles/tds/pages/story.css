@@ -1,0 +1,137 @@
+/* ==========================================================================
+   Our Story
+   ========================================================================== */
+
+.story {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(32px, 5vw, 72px) clamp(16px, 4vw, 40px);
+}
+
+.story__hero {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+  margin-bottom: clamp(36px, 5vw, 64px);
+}
+
+.story__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(32px, 5vw, 60px);
+  line-height: 1.08;
+  margin: 0 0 24px;
+  color: var(--ink);
+}
+
+.story__title-em {
+  font-style: italic;
+  color: var(--metal);
+}
+
+.story__intro {
+  max-width: 58ch;
+  margin: 0;
+}
+
+.story__intro-lead {
+  font-size: clamp(16px, 1.4vw, 19px);
+  color: rgba(247, 239, 230, 0.8);
+  margin: 0 0 18px;
+  text-wrap: pretty;
+}
+
+.story__intro-body {
+  color: var(--ink-70);
+  margin: 0 0 18px;
+  text-wrap: pretty;
+}
+
+.story__intro-note {
+  font-family: var(--font-hand);
+  font-size: clamp(26px, 3vw, 34px);
+  color: var(--metal2);
+  margin: 0;
+}
+
+.story__figure {
+  margin: 0;
+}
+
+.story__hero-image {
+  aspect-ratio: 16 / 9;
+  border: 1px solid color-mix(in srgb, var(--metal) 20%, transparent);
+}
+
+.story__caption {
+  margin-top: 14px;
+  text-align: center;
+  font-family: var(--font-hand);
+  font-size: clamp(19px, 2.2vw, 24px);
+  color: var(--metal2);
+}
+
+/* ---- Alternating blocks ----------------------------------------------- */
+
+.story-block {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(28px, 4vw, 64px);
+  align-items: center;
+  padding: clamp(24px, 4vw, 48px) 0;
+  border-top: 1px solid color-mix(in srgb, var(--metal) 14%, transparent);
+}
+
+.story-block__figure {
+  order: 1;
+}
+
+.story-block__copy {
+  order: 2;
+}
+
+.story-block.is-flipped .story-block__figure {
+  order: 2;
+}
+
+.story-block.is-flipped .story-block__copy {
+  order: 1;
+}
+
+.story-block__tile {
+  aspect-ratio: 4 / 3;
+  border: var(--line);
+}
+
+.story-block__kicker {
+  font-size: 10px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 12px;
+}
+
+.story-block__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1.18;
+  margin: 0 0 16px;
+  color: var(--ink);
+}
+
+.story-block__body {
+  max-width: 46ch;
+  color: var(--ink-70);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+/* ---- `mob` breakpoint -------------------------------------------------- */
+
+@media (max-width: 1079px) {
+  .story__hero {
+    grid-template-columns: 1fr;
+  }
+}

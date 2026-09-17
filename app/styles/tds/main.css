@@ -1,0 +1,22 @@
+/* ==========================================================================
+   main.css — the single stylesheet every page links.
+   Order matters: tokens, then reset, then layout, then components, then the
+   page-specific sheets which are allowed to override the layers above.
+   ========================================================================== */
+
+@import url("variables.css");
+@import url("reset.css");
+@import url("layout.css");
+@import url("components.css");
+
+@import url("pages/home.css");
+@import url("pages/shop.css");
+@import url("pages/product.css");
+@import url("pages/story.css");
+@import url("pages/gifting.css");
+@import url("pages/lily.css");
+@import url("pages/contact.css");
+@import url("pages/faq.css");
+@import url("pages/quick-view.css");
+@import url("pages/loader.css");
+@import url("pages/coupon.css");

@@ -1,0 +1,203 @@
+/* ==========================================================================
+   Quick view — the product peek opened from a shop card.
+   ========================================================================== */
+
+.quick {
+  z-index: 70;
+}
+
+.quick__scrim {
+  background: rgba(10, 5, 3, 0.78);
+}
+
+.quick__panel {
+  position: relative;
+  width: min(880px, 100%);
+  max-height: 88vh;
+  overflow-y: auto;
+  background: var(--bg2);
+  border: 1px solid color-mix(in srgb, var(--metal) 28%, transparent);
+  animation: fadeUp 0.3s ease both;
+}
+
+.quick__close {
+  position: sticky;
+  top: 14px;
+  float: right;
+  margin: 14px 14px 0 0;
+  z-index: 2;
+  cursor: pointer;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--ink);
+  background: #180d09;
+  border: 2px solid var(--metal);
+  border-radius: 50%;
+  box-shadow:
+    0 4px 18px rgba(4, 2, 1, 0.7),
+    0 0 0 4px rgba(24, 13, 9, 0.55);
+  transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.quick__close:hover {
+  background: var(--metal);
+  color: #180d09;
+  transform: scale(1.06);
+}
+
+.quick__grid {
+  display: grid;
+  gap: clamp(20px, 3vw, 36px);
+  padding: clamp(22px, 3.4vw, 40px);
+  grid-template-columns: 0.85fr 1fr;
+  align-items: start;
+}
+
+.quick__media {
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in srgb, var(--metal) 18%, transparent);
+}
+
+.quick__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.quick__eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--metal2);
+  margin: 0 0 12px;
+}
+
+.quick__name {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.15;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+
+.quick__pair {
+  margin: 0 0 18px;
+  font-size: 13px;
+  color: rgba(247, 239, 230, 0.58);
+}
+
+.quick__line {
+  margin: 0 0 18px;
+  font-family: var(--font-hand);
+  font-size: 22px;
+  color: var(--metal2);
+}
+
+.quick__story {
+  margin: 0 0 20px;
+  font-size: 14px;
+  color: rgba(247, 239, 230, 0.74);
+  text-wrap: pretty;
+}
+
+.quick__notes {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.note {
+  flex: 1 1 110px;
+  border: var(--line);
+  padding: 10px 12px;
+}
+
+.note__label {
+  margin: 0 0 4px;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.note__value {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.quick__sizes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.quick__price {
+  margin-left: auto;
+  font-size: 19px;
+  color: var(--metal);
+}
+
+.quick__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.quick__add {
+  cursor: pointer;
+  flex: 1 1 200px;
+  background: var(--metal);
+  color: var(--bg);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: var(--track-wide);
+  text-transform: uppercase;
+  min-height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  border: 0;
+  font-family: inherit;
+}
+
+.quick__add:hover {
+  background: var(--ink);
+}
+
+.quick__details {
+  cursor: pointer;
+  font-size: 11px;
+  letter-spacing: var(--track-wide);
+  text-transform: uppercase;
+  color: var(--metal);
+  border-bottom: 1px solid color-mix(in srgb, var(--metal) 40%, transparent);
+  padding-bottom: 4px;
+}
+
+.quick__note {
+  margin: 22px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid color-mix(in srgb, var(--metal) 14%, transparent);
+  font-family: var(--font-hand);
+  font-size: 19px;
+  color: rgba(247, 239, 230, 0.72);
+}
+
+/* ---- `mob` breakpoint -------------------------------------------------- */
+
+@media (max-width: 1079px) {
+  .quick__grid {
+    grid-template-columns: 1fr;
+  }
+}

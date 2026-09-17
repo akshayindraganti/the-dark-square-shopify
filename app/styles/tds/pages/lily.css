@@ -1,0 +1,342 @@
+/* ==========================================================================
+   Lily & Leo — two story treatments.
+   Variation A is the one light surface in the site; it defines its own
+   literal colours rather than using the dark-theme tokens.
+   ========================================================================== */
+
+.lily__switch {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: clamp(20px, 3vw, 32px) clamp(16px, 4vw, 40px) 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.lily__switch-label {
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-right: 6px;
+}
+
+/* ---- Variation A — The Storybook Spread -------------------------------- */
+
+.lily-a {
+  background: var(--cream);
+  color: var(--bg2);
+  margin-top: clamp(20px, 3vw, 32px);
+}
+
+.lily-a__intro {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(44px, 6vw, 88px) clamp(16px, 4vw, 40px);
+}
+
+.lily-a__kicker {
+  font-family: var(--font-hand);
+  font-size: clamp(28px, 3.4vw, 40px);
+  color: rgba(90, 58, 44, 0.9);
+  margin: 0 0 8px;
+}
+
+.lily-a__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(36px, 6vw, 74px);
+  line-height: 1.05;
+  margin: 0 0 24px;
+  color: var(--bg2);
+}
+
+.lily-a__lede {
+  max-width: 54ch;
+  font-size: clamp(16px, 1.4vw, 18px);
+  color: rgba(33, 20, 15, 0.78);
+  margin: 0;
+}
+
+.spread--tinted {
+  background: rgba(128, 89, 74, 0.08);
+}
+
+.spread__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(36px, 5vw, 72px) clamp(16px, 4vw, 40px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+}
+
+.spread__figure {
+  display: flex;
+  justify-content: center;
+  order: 1;
+}
+
+.spread__copy {
+  order: 2;
+}
+
+.spread__figure.is-flipped {
+  order: 2;
+}
+
+.spread__copy.is-flipped {
+  order: 1;
+}
+
+.spread__circle {
+  background: rgba(128, 89, 74, 0.1);
+  border: 1px solid rgba(128, 89, 74, 0.22);
+  border-radius: 50%;
+  width: min(320px, 70vw);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.spread__image {
+  width: 100%;
+  height: 100%;
+}
+
+.spread__caption {
+  font-family: var(--font-hand);
+  font-size: 28px;
+  color: rgba(90, 58, 44, 0.9);
+  margin: 0 0 10px;
+}
+
+.spread__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(26px, 3.4vw, 40px);
+  line-height: 1.16;
+  margin: 0 0 18px;
+  color: var(--bg2);
+}
+
+.spread__body {
+  max-width: 46ch;
+  color: rgba(33, 20, 15, 0.74);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.lily-a__questions {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(20px, 3vw, 40px) clamp(16px, 4vw, 40px) clamp(40px, 6vw, 72px);
+}
+
+.lily-a__question-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lily-a__question {
+  margin: 0;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(128, 89, 74, 0.2);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(19px, 2.3vw, 27px);
+  color: rgba(33, 20, 15, 0.86);
+  text-wrap: pretty;
+}
+
+.lily-a__last {
+  margin: 26px 0 0;
+  font-family: var(--font-hand);
+  font-size: clamp(26px, 3vw, 34px);
+  color: rgba(90, 58, 44, 0.9);
+}
+
+.lily-a__cta {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 40px) clamp(48px, 7vw, 88px);
+  text-align: center;
+}
+
+.lily-a__soon {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(90, 58, 44, 0.9);
+  margin: 0 0 16px;
+}
+
+.lily-a__soon-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 32px);
+  line-height: 1.35;
+  margin: 0 0 14px;
+  color: var(--bg2);
+}
+
+.lily-a__soon-body {
+  margin: 0 0 28px;
+  color: rgba(33, 20, 15, 0.66);
+}
+
+.lily-a__button {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  background: var(--bg2);
+  color: var(--cream);
+  padding: 16px 30px;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 2px;
+}
+
+.lily-a__button:hover {
+  color: var(--cream);
+}
+
+/* ---- Variation B — The Midnight Kitchen -------------------------------- */
+
+.lily-b {
+  margin-top: clamp(20px, 3vw, 32px);
+}
+
+.lily-b__hero {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 56px) clamp(16px, 4vw, 40px) 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(28px, 4vw, 64px);
+  align-items: center;
+}
+
+.lily-b__kicker {
+  font-family: var(--font-hand);
+  font-size: clamp(24px, 3vw, 34px);
+  color: var(--metal2);
+  margin: 0 0 8px;
+}
+
+.lily-b__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(34px, 5.4vw, 66px);
+  line-height: 1.05;
+  margin: 0 0 20px;
+  color: var(--ink);
+}
+
+.lily-b__lede {
+  max-width: 42ch;
+  color: rgba(247, 239, 230, 0.72);
+  margin: 0;
+}
+
+.lily-b__hero-image {
+  width: 100%;
+  max-width: 620px;
+  justify-self: center;
+  border-radius: 3px;
+  border: 1px solid color-mix(in srgb, var(--metal) 2%, transparent);
+}
+
+.lily-b__beats-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: clamp(36px, 5vw, 72px) clamp(16px, 4vw, 40px);
+}
+
+.lily-b__body {
+  max-width: 58ch;
+  font-size: clamp(16px, 1.4vw, 19px);
+  color: rgba(247, 239, 230, 0.8);
+  margin: 0 0 clamp(36px, 5vw, 64px);
+}
+
+.lily-b__beats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: clamp(16px, 2vw, 28px);
+}
+
+.beat {
+  border-top: 1px solid color-mix(in srgb, var(--metal) 28%, transparent);
+  padding-top: 20px;
+}
+
+.beat__frame {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 2px;
+  margin-bottom: 18px;
+}
+
+.beat__image {
+  width: 100%;
+  height: 100%;
+}
+
+.beat__num {
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--ink-soft);
+  margin: 0 0 8px;
+}
+
+.beat__title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  margin: 0 0 8px;
+  color: var(--ink);
+}
+
+.beat__body {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(247, 239, 230, 0.62);
+  text-wrap: pretty;
+}
+
+.lily-b__cta {
+  border-top: var(--line);
+  background: var(--bg2);
+}
+
+.lily-b__cta-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(40px, 6vw, 80px) clamp(16px, 4vw, 40px);
+  text-align: center;
+}
+
+.lily-b__rule {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(22px, 3vw, 34px);
+  line-height: 1.4;
+  margin: 0 0 16px;
+  color: var(--metal);
+}
+
+.lily-b__soon {
+  margin: 0 0 28px;
+  font-size: 13px;
+  letter-spacing: var(--track-wide);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}

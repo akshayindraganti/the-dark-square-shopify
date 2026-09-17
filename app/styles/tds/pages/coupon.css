@@ -1,0 +1,201 @@
+/* ==========================================================================
+   Welcome coupon modal.
+   This panel is deliberately the one light surface on the site — it reads as
+   a printed voucher — so it uses its own literal colours rather than tokens.
+   ========================================================================== */
+
+.coupon__panel {
+  position: relative;
+  width: min(940px, 100%);
+  max-height: 90vh;
+  overflow: hidden auto;
+  display: grid;
+  gap: 0;
+  grid-template-columns: 1fr 1fr;
+  background: #fbf3e8;
+  border-radius: 12px;
+  box-shadow: 0 40px 120px rgba(8, 4, 2, 0.6);
+  animation: fadeUp 0.42s ease both;
+}
+
+.coupon__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 3;
+  cursor: pointer;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1;
+  color: #fbf3e8;
+  background: #3f2415;
+  border: 2px solid rgba(251, 243, 232, 0.9);
+  border-radius: 50%;
+  box-shadow:
+    0 4px 18px rgba(24, 12, 6, 0.55),
+    0 0 0 4px rgba(251, 243, 232, 0.35);
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.coupon__close:hover {
+  background: #8b4a2b;
+  transform: scale(1.06);
+}
+
+.coupon__copy {
+  padding: clamp(34px, 4vw, 54px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.coupon__brand {
+  font-family: var(--font-display);
+  font-size: clamp(17px, 2vw, 21px);
+  letter-spacing: var(--track);
+  color: #2e1a10;
+  margin: 0 0 6px;
+}
+
+.coupon__brand-sub {
+  font-size: 8px;
+  letter-spacing: var(--track-xwide);
+  color: #6b4430;
+  margin: 0 0 clamp(20px, 3vw, 32px);
+}
+
+.coupon__headline {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(28px, 4.2vw, 46px);
+  line-height: 1.08;
+  color: #2e1a10;
+  margin: 0 0 18px;
+  text-wrap: balance;
+}
+
+.coupon__enjoy {
+  font-size: 11px;
+  letter-spacing: var(--track-xwide);
+  color: #6b4430;
+  margin: 0 0 4px;
+}
+
+.coupon__offer {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(34px, 5vw, 52px);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: #8b4a2b;
+  margin: 0 0 6px;
+}
+
+.coupon__offer-sub {
+  font-size: 11px;
+  letter-spacing: 0.26em;
+  color: #4a2c1a;
+  margin: 0 0 clamp(20px, 3vw, 28px);
+}
+
+.coupon__code {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 54px;
+  padding: 0 20px;
+  background: #3f2415;
+  border: 2px solid #8b5a3c;
+  color: #f6e7d6;
+  font-size: 13px;
+  letter-spacing: var(--track);
+  margin-bottom: 10px;
+  font-family: inherit;
+}
+
+.coupon__code:hover {
+  background: #2e1a10;
+}
+
+.coupon__code b {
+  font-weight: 700;
+  letter-spacing: var(--track-wide);
+  color: #fff;
+}
+
+.coupon__hint {
+  margin: 0 0 clamp(18px, 3vw, 26px);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #9a7560;
+}
+
+.coupon__cta {
+  cursor: pointer;
+  align-self: center;
+  background: #3f2415;
+  color: #fff6ec;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: var(--track-wide);
+  min-height: 52px;
+  padding: 0 38px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.coupon__cta:hover {
+  background: #2e1a10;
+  color: #fff6ec;
+}
+
+.coupon__arrow {
+  font-size: 15px;
+}
+
+.coupon__tagline {
+  margin: clamp(20px, 3vw, 30px) 0 0;
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  color: #6b4430;
+}
+
+.coupon__terms {
+  margin: 10px 0 0;
+  font-size: 10px;
+  color: #a08571;
+  text-wrap: pretty;
+}
+
+.coupon__art {
+  min-height: 460px;
+}
+
+/* ---- `mob` breakpoint -------------------------------------------------- */
+
+@media (max-width: 1079px) {
+  .coupon__panel {
+    grid-template-columns: 1fr;
+  }
+
+  .coupon__copy {
+    padding: clamp(28px, 6vw, 40px) clamp(22px, 5vw, 36px) 30px;
+  }
+
+  .coupon__art {
+    height: 200px;
+    min-height: 0;
+    order: -1;
+  }
+}

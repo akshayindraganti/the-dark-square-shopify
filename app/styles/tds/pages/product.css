@@ -1,0 +1,290 @@
+/* ==========================================================================
+   Product detail page.
+   ========================================================================== */
+
+.pdp {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 clamp(0px, 2vw, 24px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 0;
+}
+
+.pdp__media {
+  position: sticky;
+  top: 72px;
+  align-self: start;
+  height: fit-content;
+  padding: clamp(16px, 2vw, 28px);
+}
+
+.pdp__hero {
+  aspect-ratio: 4 / 5;
+  border: 1px solid color-mix(in srgb, var(--metal) 18%, transparent);
+  display: flex;
+  align-items: flex-end;
+  padding: 18px;
+}
+
+.pdp__body {
+  padding: clamp(24px, 4vw, 56px) clamp(16px, 3vw, 48px) 0;
+  min-width: 0;
+}
+
+.pdp__crumbs {
+  font-size: 11px;
+  letter-spacing: var(--track-wide);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 18px;
+}
+
+.pdp__crumbs a {
+  color: var(--ink-soft);
+}
+
+.pdp__name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(32px, 4.6vw, 56px);
+  line-height: 1.1;
+  margin: 0 0 14px;
+  color: var(--ink);
+}
+
+.pdp__meta {
+  font-size: 12px;
+  letter-spacing: var(--track);
+  text-transform: uppercase;
+  color: var(--metal2);
+  margin: 0 0 22px;
+}
+
+.pdp__line {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(19px, 2.2vw, 26px);
+  line-height: 1.35;
+  color: var(--metal);
+  margin: 0 0 28px;
+  max-width: 40ch;
+  text-wrap: pretty;
+}
+
+.pdp__story {
+  font-size: clamp(16px, 1.3vw, 18px);
+  color: rgba(247, 239, 230, 0.8);
+  margin: 0 0 20px;
+  max-width: 52ch;
+  text-wrap: pretty;
+}
+
+.pdp__story2 {
+  color: rgba(247, 239, 230, 0.66);
+  margin: 0 0 40px;
+  max-width: 52ch;
+  text-wrap: pretty;
+}
+
+/* ---- Tasting notes ---------------------------------------------------- */
+
+.pdp__notes {
+  border-top: 1px solid color-mix(in srgb, var(--metal) 18%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--metal) 18%, transparent);
+  padding: 26px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.pdp__note-label {
+  font-size: 10px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 8px;
+}
+
+.pdp__note-value {
+  font-family: var(--font-display);
+  font-size: 17px;
+  margin: 0;
+  color: var(--ink);
+}
+
+/* ---- Back-of-the-pack note -------------------------------------------- */
+
+.pdp__pack {
+  border: 1px solid color-mix(in srgb, var(--metal) 22%, transparent);
+  background: rgba(43, 27, 19, 0.7);
+  padding: 22px clamp(16px, 2vw, 26px);
+  margin-bottom: 40px;
+}
+
+.pdp__pack-inner {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.pdp__pack-avatar {
+  width: 74px;
+  height: 74px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex: none;
+  border: var(--line-bold);
+}
+
+.pdp__pack-title {
+  font-family: var(--font-hand);
+  font-size: 24px;
+  color: var(--metal2);
+  margin: 0 0 4px;
+}
+
+.pdp__pack-note {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(247, 239, 230, 0.72);
+  text-wrap: pretty;
+}
+
+/* ---- Sticky buy bar --------------------------------------------------- */
+
+.buybar {
+  position: sticky;
+  bottom: 0;
+  background: rgba(24, 13, 9, 0.96);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid color-mix(in srgb, var(--metal) 22%, transparent);
+  padding: 20px 0 24px;
+  z-index: 20;
+}
+
+.buybar__inner {
+  display: flex;
+  gap: 18px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.buybar__sizes {
+  flex: 1 1 180px;
+}
+
+.buybar__price {
+  flex: 0 0 auto;
+}
+
+.buybar__label {
+  font-size: 10px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 10px;
+}
+
+.buybar__chips {
+  display: flex;
+  gap: 8px;
+}
+
+.buybar__amount {
+  font-family: var(--font-display);
+  font-size: 26px;
+  margin: 0;
+  color: var(--metal);
+}
+
+.buybar__add {
+  cursor: pointer;
+  flex: 1 1 200px;
+  background: var(--metal);
+  color: var(--bg);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 18px 24px;
+  text-align: center;
+  border-radius: 2px;
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  font-family: inherit;
+}
+
+.buybar__add:hover {
+  background: var(--ink);
+}
+
+.buybar__ship {
+  margin: 14px 0 0;
+  font-size: 12px;
+  color: var(--ink-soft);
+  letter-spacing: 0.08em;
+}
+
+/* ---- Related ---------------------------------------------------------- */
+
+.pdp__related {
+  padding: clamp(40px, 6vw, 72px) 0;
+}
+
+.pdp__related-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(22px, 2.6vw, 30px);
+  margin: 0 0 24px;
+  color: var(--ink);
+}
+
+.pdp__related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.pdp__related-card {
+  display: block;
+  color: inherit;
+}
+
+.pdp__related-tile {
+  aspect-ratio: 1;
+  border: var(--line);
+  margin-bottom: 12px;
+}
+
+.pdp__related-name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  margin: 0 0 4px;
+  color: var(--ink);
+}
+
+.pdp__related-price {
+  margin: 0;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+/* ---- `mob` breakpoint -------------------------------------------------- */
+
+@media (max-width: 1079px) {
+  .pdp__media {
+    position: static;
+    padding: clamp(16px, 4vw, 28px);
+    /* The original had a three-up thumbnail strip below the hero here. It was
+       driven by a `productShots` list that was never defined, so it always
+       rendered empty — but its 10px top margin still occupied space, and the
+       columns stack at this width. Kept as real spacing so the page matches;
+       delete this line if the tighter gap is preferred. */
+    padding-bottom: calc(clamp(16px, 4vw, 28px) + 10px);
+  }
+}

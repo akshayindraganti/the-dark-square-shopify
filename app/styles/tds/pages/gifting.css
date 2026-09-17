@@ -1,0 +1,129 @@
+/* ==========================================================================
+   Gifting
+   ========================================================================== */
+
+.gift__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(32px, 5.2vw, 62px);
+  line-height: 1.08;
+  margin: 0 0 20px;
+  color: var(--ink);
+}
+
+.gift__title-em {
+  font-style: italic;
+  color: var(--metal);
+}
+
+.gift__lede {
+  max-width: 54ch;
+  font-size: clamp(16px, 1.4vw, 19px);
+  color: rgba(247, 239, 230, 0.78);
+  margin: 0 0 20px;
+}
+
+.gift__sub {
+  max-width: 62ch;
+  color: rgba(247, 239, 230, 0.66);
+  margin: 0 0 clamp(36px, 5vw, 64px);
+  text-wrap: pretty;
+}
+
+.gift__routes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.gift-card {
+  border: 1px solid color-mix(in srgb, var(--metal) 2%, transparent);
+  background: var(--bg2);
+  display: flex;
+  flex-direction: column;
+}
+
+.gift-card__tile {
+  aspect-ratio: 3 / 2;
+  border: var(--line);
+}
+
+.gift-card__body {
+  padding: 26px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.gift-card__title {
+  font-family: var(--font-display);
+  font-size: 23px;
+  margin: 0;
+  color: var(--ink);
+}
+
+.gift-card__text {
+  margin: 0;
+  color: rgba(247, 239, 230, 0.66);
+  font-size: 15px;
+  flex: 1;
+  text-wrap: pretty;
+}
+
+.gift-card__cta {
+  align-self: flex-start;
+  font-size: 11px;
+  letter-spacing: var(--track-wide);
+  text-transform: uppercase;
+  color: var(--metal);
+  border-bottom: 1px solid color-mix(in srgb, var(--metal) 4%, transparent);
+  padding-bottom: 4px;
+}
+
+/* ---- Corporate -------------------------------------------------------- */
+
+.corp {
+  margin-top: clamp(48px, 7vw, 96px);
+  border-top: var(--line);
+  padding-top: clamp(40px, 6vw, 72px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(32px, 5vw, 72px);
+  align-items: start;
+}
+
+.corp__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(26px, 3.6vw, 42px);
+  line-height: 1.14;
+  margin: 0 0 18px;
+  color: var(--ink);
+}
+
+.corp__body {
+  max-width: 46ch;
+  color: rgba(247, 239, 230, 0.72);
+  margin: 0 0 16px;
+}
+
+.corp__body--muted {
+  color: rgba(247, 239, 230, 0.6);
+  margin: 0 0 28px;
+  font-size: 15px;
+}
+
+.corp__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 2px 24px;
+}
+
+.corp__item {
+  margin: 0;
+  padding: 13px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--metal) 12%, transparent);
+  font-size: 15px;
+  color: rgba(247, 239, 230, 0.78);
+}

@@ -1,0 +1,105 @@
+/* ==========================================================================
+   Intro loader — the home page only.
+   ========================================================================== */
+
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
+.loader.is-done {
+  opacity: 0;
+}
+
+.loader__inner {
+  width: min(460px, 82vw);
+  text-align: center;
+}
+
+.loader__brand {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 3.4vw, 30px);
+  letter-spacing: 0.3em;
+  margin: 0 0 10px;
+  color: var(--metal);
+}
+
+.loader__sub {
+  font-size: 9px;
+  letter-spacing: 0.38em;
+  margin: 0 0 clamp(48px, 9vw, 88px);
+  color: var(--ink-50);
+}
+
+.loader__label {
+  font-size: 10px;
+  letter-spacing: var(--track-xwide);
+  text-transform: uppercase;
+  color: var(--ink-55);
+  margin: 0 0 10px;
+  text-align: left;
+}
+
+.loader__drip {
+  position: relative;
+  height: 92px;
+}
+
+.loader__drip-stream {
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  width: 15px;
+  height: 98px;
+  border-radius: 8px 8px 2px 2px;
+  background: linear-gradient(180deg, #4a2a18, #c77a4c 62%, #8a4b2c);
+  animation: drip 1.15s cubic-bezier(0.5, 0, 0.6, 1) both;
+}
+
+.loader__drip-pool {
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  width: 34px;
+  height: 15px;
+  border-radius: 50%;
+  background: #a85f35;
+  animation: wobble 1.6s ease-in-out 0.9s infinite;
+}
+
+.loader__track {
+  height: 26px;
+  border: 1px solid rgba(199, 122, 76, 0.45);
+  border-radius: 14px;
+  overflow: hidden;
+  padding: 3px;
+}
+
+.loader__bar {
+  height: 100%;
+  border-radius: 11px;
+  background: linear-gradient(90deg, #6b3b22, #c77a4c);
+  transition: width 0.18s linear;
+  width: 0;
+}
+
+.loader__status {
+  margin: 26px 0 0;
+  font-size: clamp(13px, 1.8vw, 17px);
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--metal);
+}
+
+.loader__dots {
+  animation: dots 1.2s ease-in-out infinite;
+}

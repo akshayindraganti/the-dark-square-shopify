@@ -1,0 +1,186 @@
+/* ==========================================================================
+   Shop — filters and the product grid.
+   ========================================================================== */
+
+/* The shop caps its vertical padding 8px tighter than the other pages. */
+.page--shop {
+  padding: clamp(32px, 5vw, 64px) clamp(16px, 4vw, 40px);
+}
+
+.shop__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(32px, 5vw, 58px);
+  margin: 0 0 16px;
+  color: var(--ink);
+}
+
+.shop__blurb {
+  max-width: 52ch;
+  color: var(--ink-70);
+  margin: 0 0 clamp(28px, 4vw, 48px);
+}
+
+.shop__layout {
+  display: flex;
+  gap: clamp(24px, 4vw, 56px);
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.shop__aside {
+  flex: 1 1 200px;
+  max-width: 260px;
+  min-width: 190px;
+  position: sticky;
+  top: 96px;
+}
+
+.shop__filter-heading {
+  font-size: 10px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 14px;
+  padding-bottom: 12px;
+  border-bottom: var(--line);
+}
+
+.shop__collections {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 32px;
+}
+
+.shop__occasions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.shop__results {
+  flex: 3 1 420px;
+  min-width: 0;
+}
+
+.shop__count {
+  font-size: 12px;
+  letter-spacing: var(--track);
+  color: var(--ink-soft);
+  margin: 0 0 20px;
+  text-transform: uppercase;
+}
+
+.shop__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: clamp(16px, 2vw, 26px);
+}
+
+/* ---- Shop card -------------------------------------------------------- */
+
+.shop-card {
+  border-bottom: 1px solid color-mix(in srgb, var(--metal) 12%, transparent);
+  padding-bottom: 20px;
+}
+
+.shop-card__figure {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.shop-card__tile {
+  display: block;
+  aspect-ratio: 1;
+  border: var(--line);
+  margin-bottom: 0;
+}
+
+.shop-card__tile:hover {
+  border-color: color-mix(in srgb, var(--metal) 45%, transparent);
+}
+
+.shop-card__quick {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  cursor: pointer;
+  background: color-mix(in srgb, var(--bg) 72%, transparent);
+  backdrop-filter: blur(4px);
+  border: var(--line-bold);
+  color: var(--metal);
+  font-size: 10px;
+  letter-spacing: var(--track-wide);
+  text-transform: uppercase;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+}
+
+.shop-card__quick:hover {
+  background: var(--metal);
+  color: var(--bg);
+}
+
+.shop-card__name {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 19px;
+  margin: 0 0 6px;
+  color: var(--ink);
+}
+
+.shop-card__pair {
+  margin: 0 0 14px;
+  font-size: 13px;
+  color: rgba(247, 239, 230, 0.58);
+}
+
+.shop-card__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.shop-card__price {
+  font-size: 15px;
+  color: var(--metal);
+}
+
+.shop-card__add {
+  cursor: pointer;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--metal2);
+  border: 1px solid color-mix(in srgb, var(--metal2) 4%, transparent);
+  padding: 10px 14px;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  font-family: inherit;
+}
+
+.shop-card__add:hover {
+  color: var(--ink);
+  border-color: var(--metal);
+}
+
+/* ---- `mob` breakpoint -------------------------------------------------- */
+
+@media (max-width: 1079px) {
+  .shop__aside {
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding-bottom: 8px;
+    position: static;
+  }
+}

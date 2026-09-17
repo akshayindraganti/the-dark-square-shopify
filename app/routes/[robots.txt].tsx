@@ -1,8 +1,7 @@
 import type {Route} from './+types/[robots.txt]';
 
-export function loader({request}: Route.LoaderArgs) {
-  const url = new URL(request.url);
-  const body = robotsTxtData({url: url.origin});
+export function loader() {
+  const body = robotsTxtData({});
 
   return new Response(body, {
     status: 200,
@@ -15,7 +14,12 @@ export function loader({request}: Route.LoaderArgs) {
 }
 
 function robotsTxtData({url}: {url?: string}) {
-  const sitemapUrl = url ? `${url}/sitemap.xml` : undefined;
+  /* No Sitemap: line. Hydrogen's generated sitemap routes were removed with
+     the rest of the scaffold — they enumerate Shopify products, collections
+     and pages, none of which back this site — so advertising /sitemap.xml
+     would point crawlers at a 404. The site is eight pages plus one per bar,
+     all reachable from the nav. */
+  const sitemapUrl = undefined;
 
   return `
 User-agent: *

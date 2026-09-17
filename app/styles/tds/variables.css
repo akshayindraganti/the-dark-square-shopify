@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Design tokens — The Dark Square
+   Ported verbatim from the `THEMES.copper` object of the original single-file
+   build. These are the only colour values in the codebase; nothing below this
+   file should hard-code a hex.
+   ========================================================================== */
+
+:root {
+  /* ---- Surfaces ---- */
+  --bg: #1b0f0a;
+  --bg2: #2e1a12;
+  --bg3: #3a2317;
+  --bg4: #2a170f;
+
+  /* ---- Type ---- */
+  --ink: #f5efe5;
+  --cream: #ebd8c0;
+  --ink-soft: #f3ebdd; /* header, footer and small-caps labels */
+
+  /* ---- Copper accents ---- */
+  --metal: #c77a4c;
+  --metal2: #d69b78;
+  --metal3: #b87a55;
+  --muted: #8a6250;
+
+  /* ---- Derived inks (the rgba() literals the original repeated inline) ---- */
+  --ink-70: rgba(245, 239, 229, 0.7);
+  --ink-60: rgba(245, 239, 229, 0.6);
+  --ink-55: rgba(245, 239, 229, 0.55);
+  --ink-50: rgba(245, 239, 229, 0.5);
+  --ink-38: rgba(245, 239, 229, 0.38);
+
+  /* ---- Hairlines ---- */
+  --line: 1px solid color-mix(in srgb, var(--metal) 16%, transparent);
+  --line-strong: 1px solid color-mix(in srgb, var(--metal) 24%, transparent);
+  --line-bold: 1px solid color-mix(in srgb, var(--metal) 34%, transparent);
+
+  /* ---- Type families ---- */
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: Lato, system-ui, -apple-system, sans-serif;
+  --font-hand: Caveat, cursive;
+
+  /* ---- Tracking ---- */
+  --track-tight: 0.04em;
+  --track: 0.16em;
+  --track-wide: 0.2em;
+  --track-xwide: 0.34em;
+
+  /* ---- Fluid rhythm ---- */
+  --gap: clamp(28px, 4vw, 56px);
+  --section-y: clamp(64px, 9vw, 132px);
+  --shell-x: clamp(20px, 5vw, 68px);
+  --shell-max: 1360px;
+
+  /* ---- Breakpoints (documentation; media queries restate the values) ----
+     --bp-mob:   1080px   `mob`   in the original renderVals()
+     --bp-phone:  768px   `phone` in the original renderVals()          */
+}

@@ -1,0 +1,352 @@
+/* ==========================================================================
+   Layout — the site shell, header, footer and shared page scaffolding.
+   ========================================================================== */
+
+/* ---- Page shell ------------------------------------------------------- */
+
+.shell {
+  max-width: var(--shell-max);
+  margin: 0 auto;
+  padding: 0 var(--shell-x);
+}
+
+.section {
+  padding: var(--section-y) 0;
+}
+
+/* ---- Header ----------------------------------------------------------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(24, 13, 9, 0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: var(--line);
+}
+
+.site-header__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 14px clamp(16px, 4vw, 40px);
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2vw, 28px);
+  flex-wrap: nowrap;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  padding-right: 4px;
+  color: var(--ink-soft);
+}
+
+.brand:hover {
+  color: var(--ink-soft);
+}
+
+.brand__name {
+  font-family: var(--font-display);
+  font-size: clamp(16px, 2.2vw, 19px);
+  letter-spacing: 0.26em;
+}
+
+.brand__sub {
+  font-size: 8px;
+  letter-spacing: var(--track-xwide);
+  margin-top: 5px;
+}
+
+/* ---- Desktop nav ------------------------------------------------------ */
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 2vw, 26px);
+  flex-wrap: wrap;
+  margin-left: auto;
+  font-size: 11px;
+  letter-spacing: var(--track-wide);
+  text-transform: uppercase;
+}
+
+.site-nav__link {
+  color: var(--ink-soft);
+  opacity: 0.78;
+  border-bottom: 1px solid transparent;
+  padding: 6px 0;
+  font-size: 14px;
+  font-family: var(--font-display);
+}
+
+.site-nav__link:hover {
+  color: var(--ink-soft);
+  opacity: 1;
+}
+
+.site-nav__link.is-active {
+  opacity: 1;
+  border-bottom-color: var(--metal2);
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+/* ---- Burger + mobile menu --------------------------------------------- */
+
+.burger {
+  display: none;
+  width: 46px;
+  height: 46px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: var(--line-bold);
+  border-radius: 2px;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.burger__bar {
+  display: block;
+  width: 18px;
+  height: 1px;
+  background: var(--ink-soft);
+}
+
+.burger__bar + .burger__bar {
+  margin-top: 5px;
+}
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  animation: fadeUp 0.22s ease both;
+}
+
+.mobile-menu__top {
+  display: flex;
+  justify-content: flex-end;
+  padding: 18px clamp(16px, 5vw, 32px);
+}
+
+.mobile-menu__close {
+  cursor: pointer;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.mobile-menu__nav {
+  display: flex;
+  flex-direction: column;
+  padding: 0 clamp(16px, 5vw, 32px);
+}
+
+.mobile-menu__link {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 7vw, 34px);
+  color: var(--ink-soft);
+  padding: 13px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--metal) 14%, transparent);
+}
+
+.mobile-menu__tagline {
+  margin: auto 0 32px;
+  padding: 0 clamp(16px, 5vw, 32px);
+  font-family: var(--font-hand);
+  font-size: 26px;
+  color: var(--metal2);
+}
+
+/* ---- Breakpoint: `mob` in the original (vw < 1080) --------------------- */
+
+@media (max-width: 1079px) {
+  .site-nav {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .cart-button__label-full {
+    display: none;
+  }
+}
+
+@media (min-width: 1080px) {
+  .cart-button__label-short {
+    display: none;
+  }
+}
+
+/* ---- Footer ----------------------------------------------------------- */
+
+.site-footer {
+  border-top: var(--line);
+  background: var(--bg);
+  margin-top: clamp(40px, 6vw, 80px);
+}
+
+.site-footer__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 72px) clamp(16px, 4vw, 40px);
+}
+
+.site-footer__cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: clamp(28px, 4vw, 48px);
+  padding-bottom: clamp(32px, 4vw, 56px);
+}
+
+.site-footer__tagline {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.6vw, 30px);
+  line-height: 1.25;
+  margin: 0 0 16px;
+  color: var(--metal2);
+}
+
+.site-footer__blurb {
+  margin: 0;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.site-footer__heading {
+  font-size: 10px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--metal3);
+  margin: 0 0 16px;
+}
+
+.site-footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.site-footer__links a {
+  font-size: 14px;
+  color: rgba(247, 239, 230, 0.62);
+}
+
+.site-footer__links a:hover {
+  color: var(--ink);
+}
+
+.site-footer__signup {
+  border-top: 1px solid color-mix(in srgb, var(--metal) 14%, transparent);
+  padding-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  align-items: center;
+}
+
+.site-footer__signup-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  margin: 0 0 6px;
+  color: var(--ink);
+}
+
+.signup {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.signup__input {
+  flex: 1 1 180px;
+  background: rgba(43, 27, 19, 0.6);
+  border: var(--line-strong);
+  color: var(--ink);
+  padding: 14px;
+  font-size: 14px;
+  border-radius: 2px;
+  min-height: 48px;
+}
+
+.signup__input:focus {
+  border-color: var(--metal);
+  outline: none;
+}
+
+.site-footer__legal {
+  margin: 40px 0 0;
+  font-size: 12px;
+  color: var(--ink-soft);
+  letter-spacing: 0.06em;
+}
+
+/* ---- Shared page scaffolding ------------------------------------------ */
+
+/* Narrow reading measure: FAQ, and any long-form page. */
+.prose-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(32px, 5vw, 72px) clamp(16px, 4vw, 40px);
+}
+
+/* Full-width page body: shop, product, gifting, story, contact. */
+.page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: clamp(32px, 5vw, 72px) clamp(16px, 4vw, 40px);
+}
+
+.page-kicker {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 18px;
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(32px, 5vw, 58px);
+  line-height: 1.1;
+  margin: 0 0 clamp(36px, 5vw, 60px);
+  color: var(--ink);
+}
+
+.page-lede {
+  margin: 0 0 clamp(32px, 4vw, 52px);
+  max-width: 64ch;
+  color: var(--ink-70);
+  font-size: clamp(16px, 1.6vw, 19px);
+  text-wrap: pretty;
+}
+
+.hand-note {
+  font-family: var(--font-hand);
+  font-size: 28px;
+  color: var(--metal2);
+  margin: 0 0 16px;
+}
